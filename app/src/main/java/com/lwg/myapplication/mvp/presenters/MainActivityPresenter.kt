@@ -26,7 +26,7 @@ class MainActivityPresenter(val view: MainActivityView) : RepositoryCallbacks.IM
     }
 
     override fun onError(errorMessage: String?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.d("lwg", errorMessage)
     }
 
 }

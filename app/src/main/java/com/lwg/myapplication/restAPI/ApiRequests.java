@@ -6,7 +6,8 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
-public interface SOService {
+public interface ApiRequests {
+
     @GET("/answers?order=desc&sort=activity&site=stackoverflow")
     Call<SOAnswersResponse> getAnswers();
 

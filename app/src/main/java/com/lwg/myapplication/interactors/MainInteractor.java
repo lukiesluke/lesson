@@ -1,8 +1,8 @@
 package com.lwg.myapplication.interactors;
 
-import com.lwg.myapplication.ApiUtils;
+import com.lwg.myapplication.ApiBuilder;
 import com.lwg.myapplication.restAPI.RepositoryCallbacks;
-import com.lwg.myapplication.restAPI.SOService;
+import com.lwg.myapplication.restAPI.ApiRequests;
 import com.lwg.myapplication.models.SOAnswersResponse;
 
 import org.jetbrains.annotations.NotNull;
@@ -13,12 +13,13 @@ import retrofit2.Response;
 
 public class MainInteractor implements IMainInteractor {
 
-    private SOService mService;
+    private ApiRequests apiRequests;
 
     @Override
     public void getAnswers(final RepositoryCallbacks.IMainActivityCallBack callBack) {
-        mService = ApiUtils.getSOService();
-        mService.getAnswers().enqueue(new Callback<SOAnswersResponse>() {
+
+        apiRequests = ApiBuilder.getSOService();
+        apiRequests.getAnswers().enqueue(new Callback<SOAnswersResponse>() {
             @Override
             public void onResponse(@NotNull Call<SOAnswersResponse> call, @NotNull Response<SOAnswersResponse> response) {
                 if (response.isSuccessful()) {
