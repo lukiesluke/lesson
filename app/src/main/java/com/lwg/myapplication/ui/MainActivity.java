@@ -43,5 +43,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityView,
     @Override
     public void onItemClicked(Item item, int selectedViewYPosition) {
         Log.d("lwg", item.getOwner().getProfileImage());
+        adapter.removeItemPosition(selectedViewYPosition);
     }
 }

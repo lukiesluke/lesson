@@ -1,8 +1,8 @@
-package com.lwg.myapplication.interactors;
+package com.lwg.myapplication.repository;
 
 import com.lwg.myapplication.restAPI.RepositoryCallbacks;
 
-public interface IMainInteractor {
+public interface Repository {
 
     void getAnswers(RepositoryCallbacks.IMainActivityCallBack callBack);
 

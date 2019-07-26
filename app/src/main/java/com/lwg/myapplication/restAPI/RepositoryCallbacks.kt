@@ -8,4 +8,11 @@ class RepositoryCallbacks {
 
         fun onError(errorMessage: String?)
     }
+
+    interface IMainActivityGitHubCallBack<T> {
+
+        fun onGitSuccess(response: T?)
+
+        fun onGitError(errorMessage: String?)
+    }
 }
