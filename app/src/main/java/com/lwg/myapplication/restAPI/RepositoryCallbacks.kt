@@ -9,10 +9,11 @@ class RepositoryCallbacks {
         fun onError(errorMessage: String?)
     }
 
-    interface IMainActivityGitHubCallBack<T> {
+    interface ISingleResponseCallback<T> {
 
-        fun onGitSuccess(response: T?)
+        fun onSuccess(response: T?)
 
-        fun onGitError(errorMessage: String?)
+        fun onError(errorMessage: String?)
+
     }
 }

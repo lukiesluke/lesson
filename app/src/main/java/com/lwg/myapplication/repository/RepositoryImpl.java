@@ -37,17 +37,16 @@ public class RepositoryImpl implements Repository {
     }
 
     @Override
-    public void getGitHub(final RepositoryCallbacks.IMainActivityGitHubCallBack callBack) {
-
+    public void getGitHub(final RepositoryCallbacks.ISingleResponseCallback callBack) {
         apiServiceRequests.getGitHub().enqueue(new Callback<Github>() {
             @Override
             public void onResponse(Call<Github> call, Response<Github> response) {
                 if (response.isSuccessful()) {
-                    callBack.onGitSuccess(response.body());
+                    callBack.onSuccess(response.body());
                     Log.d("lwg", "interactor: " + response.body().getCurrent_user());
                     Log.d("lwg", "interactor: " + response.body().getCurrent_user_authorizations());
                 } else {
-                    callBack.onGitError("interactor response code: " + response.code() + response.message());
+                    callBack.onError("interactor response code: " + response.code() + response.message());
                 }
             }
 

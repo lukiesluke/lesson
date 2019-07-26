@@ -6,6 +6,6 @@ public interface IMainInteractor {
 
     void getAnswers(RepositoryCallbacks.IMainActivityCallBack callBack);
 
-    void getGitHub(RepositoryCallbacks.IMainActivityGitHubCallBack callBack);
+    void getGitHub(RepositoryCallbacks.ISingleResponseCallback callBack);
 
 }

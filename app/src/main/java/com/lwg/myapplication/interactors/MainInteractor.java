@@ -14,7 +14,7 @@ public class MainInteractor implements IMainInteractor {
     }
 
     @Override
-    public void getGitHub(final RepositoryCallbacks.IMainActivityGitHubCallBack callBack) {
+    public void getGitHub(RepositoryCallbacks.ISingleResponseCallback callBack) {
         repository.getGitHub(callBack);
     }
 }
